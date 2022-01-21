@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 import { ApiProperty } from "@nestjs/swagger";
 import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
 
@@ -26,4 +27,8 @@ export class subtasks {
     @ApiProperty()
     @Column()
     percentage_complete: number;
+
+    @ApiProperty()
+    @Column()
+    complexity: number;
 }

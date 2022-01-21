@@ -5,7 +5,7 @@ import { InjectRepository } from '@nestjs/typeorm';
 
 @Injectable()
 export class TasksService extends TypeOrmCrudService<tasks> {
-    constructor(@InjectRepository(tasks) repo){
-        super(repo)
-    }
+  constructor(@InjectRepository(tasks) repo) {
+    super(repo);
+  }
 }

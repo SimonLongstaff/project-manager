@@ -5,6 +5,7 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { ProjectsModule } from './projects/projects.module';
 import { TasksModule } from './tasks/tasks.module';
 import { SubtasksModule } from './subtasks/subtasks.module';
+import { WorkLogModule } from './work-log/work-log.module';
 
 @Module({
   imports: [
@@ -17,7 +18,8 @@ import { SubtasksModule } from './subtasks/subtasks.module';
     }),
     ProjectsModule,
     TasksModule,
-    SubtasksModule
+    SubtasksModule,
+    WorkLogModule
   ],
   controllers: [AppController],
   providers: [AppService],

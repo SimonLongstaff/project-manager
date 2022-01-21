@@ -2,31 +2,23 @@ import { ApiProperty } from '@nestjs/swagger';
 import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
 
 @Entity()
-export class tasks {
+export class work_log {
   @PrimaryGeneratedColumn()
   id: number;
 
   @ApiProperty()
   @Column()
-  project_id: number;
+  subtask_id: number;
 
   @ApiProperty()
   @Column()
-  task_name: string;
+  date: Date;
 
   @ApiProperty()
   @Column()
-  task_desc: string;
+  time_spent: number;
 
   @ApiProperty()
   @Column()
-  is_complete: number;
-
-  @ApiProperty()
-  @Column()
-  percentage_complete: number;
-
-  @ApiProperty()
-  @Column()
-  tag_id: number;
+  percentage_done: number;
 }
