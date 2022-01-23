@@ -1,4 +1,4 @@
-import { Controller } from '@nestjs/common';
+import { Controller, Delete, Param } from '@nestjs/common';
 import { Crud, CrudController } from '@nestjsx/crud';
 import { work_log } from './work_log.entity';
 import { WorkLogService } from './work-log.service';
@@ -13,4 +13,9 @@ import { ApiTags } from '@nestjs/swagger';
 @Controller('work-log')
 export class WorkLogController implements CrudController<work_log> {
   constructor(public service: WorkLogService) {}
+
+  @Delete('/subtask_id=:subtask_id')
+  remove(@Param('subtask_id') subtask_id: string) {
+    this.service.deleteBySubtask(subtask_id);
+  }
 }
