@@ -8,4 +8,8 @@ export class TasksService extends TypeOrmCrudService<tasks> {
   constructor(@InjectRepository(tasks) repo) {
     super(repo);
   }
+
+  async getAllByProjectId(id): Promise<tasks[]> {
+    return await this.repo.find({ project_id: id });
+  }
 }

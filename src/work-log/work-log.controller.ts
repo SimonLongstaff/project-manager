@@ -1,4 +1,4 @@
-import { Controller, Delete, Param } from '@nestjs/common';
+import { Controller, Delete, Get, Param } from '@nestjs/common';
 import { Crud, CrudController } from '@nestjsx/crud';
 import { work_log } from './work_log.entity';
 import { WorkLogService } from './work-log.service';
@@ -17,5 +17,10 @@ export class WorkLogController implements CrudController<work_log> {
   @Delete('/subtask_id=:subtask_id')
   remove(@Param('subtask_id') subtask_id: string) {
     this.service.deleteBySubtask(subtask_id);
+  }
+
+  @Get('/subtask_id=:subtask_id')
+  findAll(@Param('subtask_id') subtask_id: string) {
+    return this.service.getBySubtaskID(subtask_id);
   }
 }
