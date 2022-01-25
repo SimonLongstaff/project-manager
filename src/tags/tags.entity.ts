@@ -2,27 +2,19 @@ import { ApiProperty } from '@nestjs/swagger';
 import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
 
 @Entity()
-export class projects {
+export class tags {
   @PrimaryGeneratedColumn()
   id: number;
 
   @ApiProperty()
   @Column()
-  project_name: string;
+  tag_name: string;
 
   @ApiProperty()
   @Column()
-  project_desc: string;
+  tag_type: number;
 
   @ApiProperty()
   @Column()
-  is_complete: number;
-
-  @ApiProperty()
-  @Column()
-  tag_id: number;
-
-  @ApiProperty()
-  @Column()
-  is_archived: boolean;
+  tag_colour: string;
 }

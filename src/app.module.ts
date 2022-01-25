@@ -6,6 +6,7 @@ import { ProjectsModule } from './projects/projects.module';
 import { TasksModule } from './tasks/tasks.module';
 import { SubtasksModule } from './subtasks/subtasks.module';
 import { WorkLogModule } from './work-log/work-log.module';
+import { TagsModule } from './tags/tags.module';
 
 @Module({
   imports: [
@@ -19,7 +20,8 @@ import { WorkLogModule } from './work-log/work-log.module';
     ProjectsModule,
     TasksModule,
     SubtasksModule,
-    WorkLogModule
+    WorkLogModule,
+    TagsModule
   ],
   controllers: [AppController],
   providers: [AppService],

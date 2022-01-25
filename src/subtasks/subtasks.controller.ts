@@ -18,4 +18,5 @@ export class SubtasksController implements CrudController<subtasks> {
   findAll(@Param('task_id') task_id: string) {
     return this.service.getAllByTaskId(task_id);
   }
+
 }
