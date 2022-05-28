@@ -16,4 +16,8 @@ export class WorkLogService extends TypeOrmCrudService<work_log> {
   async getBySubtaskID(id): Promise<work_log[]> {
     return await this.repo.find({ subtask_id: id });
   }
+
+  async getByProjectID(id): Promise<work_log[]> {
+    return await this.repo.find({ project_id: id });
+  }
 }

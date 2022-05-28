@@ -23,4 +23,9 @@ export class WorkLogController implements CrudController<work_log> {
   findAll(@Param('subtask_id') subtask_id: string) {
     return this.service.getBySubtaskID(subtask_id);
   }
+
+  @Get('/project_id=:project_id')
+  findAllByProject(@Param('project_id') project_id: string) {
+    return this.service.getByProjectID(project_id);
+  }
 }

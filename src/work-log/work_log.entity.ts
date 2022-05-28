@@ -6,6 +6,7 @@ export class work_log {
   @PrimaryGeneratedColumn()
   id: number;
 
+
   @ApiProperty()
   @Column()
   subtask_id: number;
@@ -21,4 +22,9 @@ export class work_log {
   @ApiProperty()
   @Column()
   percentage_done: number;
+
+  @ApiProperty()
+  @Column()
+  project_id: number;
+
 }
