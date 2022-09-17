@@ -7,6 +7,7 @@ import { TasksModule } from './tasks/tasks.module';
 import { SubtasksModule } from './subtasks/subtasks.module';
 import { WorkLogModule } from './work-log/work-log.module';
 import { TagsModule } from './tags/tags.module';
+import { RepeatableTaskModule } from './repeatable-task/repeatable-task.module';
 
 @Module({
   imports: [
@@ -22,6 +23,7 @@ import { TagsModule } from './tags/tags.module';
     SubtasksModule,
     WorkLogModule,
     TagsModule,
+    RepeatableTaskModule,
   ],
   controllers: [AppController],
   providers: [AppService],
