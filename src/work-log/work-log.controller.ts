@@ -28,4 +28,12 @@ export class WorkLogController implements CrudController<work_log> {
   findAllByProject(@Param('project_id') project_id: string) {
     return this.service.getByProjectID(project_id);
   }
+
+  @Get('/latest')
+  getLatest() {
+    return this.service.GetLatestLogWithProjectAndSubtak();
+  }
+
+
+
 }

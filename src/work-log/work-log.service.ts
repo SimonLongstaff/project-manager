@@ -20,4 +20,10 @@ export class WorkLogService extends TypeOrmCrudService<work_log> {
   async getByProjectID(id): Promise<work_log[]> {
     return await this.repo.find({ project_id: id });
   }
+
+  async GetLatestLogWithProjectAndSubtak(): Promise<work_log> {
+    return await this.repo.query(
+      'SELECT * FROM work_log INNER JOIN projects ON work_log.project_id = projects.id INNER JOIN subtasks ON work_log.subtask_id = subtasks.id ORDER BY work_log.id DESC LIMIT 5',
+    );
+  }
 }

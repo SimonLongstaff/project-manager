@@ -1,5 +1,6 @@
 import { ApiProperty } from '@nestjs/swagger';
-import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
+import { Column, Entity, JoinTable, OneToOne, PrimaryGeneratedColumn } from "typeorm";
+import { projects } from "../projects/project.entity";
 
 @Entity()
 export class work_log {
@@ -27,4 +28,7 @@ export class work_log {
   @Column()
   project_id: number;
 
+  @OneToOne(() => projects)
+  @JoinTable()
+  project: projects;
 }
